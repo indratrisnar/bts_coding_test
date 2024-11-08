@@ -1,5 +1,6 @@
 import 'package:bts_coding_test/datasources/todo_datasource.dart';
 import 'package:d_info/d_info.dart';
+import 'package:d_session/d_session.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -38,6 +39,12 @@ class _TodoPageState extends State<TodoPage> {
     fetchAll();
   }
 
+  void logout() {
+    DSession.removeToken().then((value) {
+      if (mounted) Navigator.pushReplacementNamed(context, '/');
+    });
+  }
+
   @override
   void initState() {
     fetchAll();
@@ -53,6 +60,10 @@ class _TodoPageState extends State<TodoPage> {
           IconButton(
             onPressed: fetchAll,
             icon: const Icon(Icons.refresh_rounded),
+          ),
+          IconButton(
+            onPressed: logout,
+            icon: const Icon(Icons.logout),
           ),
         ],
       ),

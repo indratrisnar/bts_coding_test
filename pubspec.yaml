@@ -1,0 +1,26 @@
+name: bts_coding_test
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.1
+
+dependencies:
+  d_info: ^0.2.2
+  d_input: ^0.4.2
+  d_session: ^0.0.3
+  fd_log: ^0.0.8
+  flutter:
+    sdk: flutter
+  gap: ^3.0.1
+  get: ^4.6.6
+  http: ^1.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
